@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Random Room Mapper</title>
+</head>
+
+<body>
+    <div id="main">
+        <canvas id="canv" style='width:500px;height:500px;' width=500 height=500>
+
+        </canvas>
+        <hr>
+        Room Width (min-max):&nbsp;<input type="number" v-model.number='rw.s' class="number"> - <input type="number" v-model.number='rw.l' class="number"><br>
+        Room Height (min-max):&nbsp;<input type="number" v-model.number='rh.s' class="number"> - <input type="number" v-model.number='rh.l' class="number"><br>
+        Number of Rooms:&nbsp;<input type="number" v-model.number='rn' class="number" min='1' max='200'><br>
+        Minimum Separation Distance:&nbsp;<input type="number" v-model.number='minSep' class="number" min='1' max='100'><br>
+        "Dungeon" mode:&nbsp;<input type="checkbox" v-model='dm'>
+        <hr>
+        <button class="button is-info" @click='makeRooms()'>Draw New Map</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="./js/mst.js"></script>
+    <script src="./js/delaunay.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
